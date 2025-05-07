@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Basic SEO -->
+<title>ASL Detection - Real-Time American Sign Language Recognition</title>
+<meta name="description" content="ASL Detection is a real-time web app that uses machine learning to recognize American Sign Language gestures via webcam.">
+<meta name="keywords" content="ASL, American Sign Language, hand gesture recognition, sign language, real-time detection, machine learning, Flask, webcam">
+<meta name="author" content="Mithun Raj">
+
+<!-- Open Graph (for social media sharing) -->
+<meta property="og:title" content="ASL Detection - Real-Time Sign Language Recognition">
+<meta property="og:description" content="Web app that detects ASL gestures live using webcam and ML.">
+<meta property="og:image" content="{{ url_for('static', filename='asl_chart.png', _external=True) }}">
+<meta property="og:url" content="{{ request.url }}">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon (optional) -->
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">ASL DETECTION</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/detect" class="active">Detect</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="detect-main">
+        <section class="camera-section">
+            <h1 >Live ASL Detection</h1>
+            <div class="video-container">
+                <img src="{{ url_for('video') }}" alt="Video Stream" class="video-feed">
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <h1>ASL Alphabet Guide</h1>
+            <img src="{{ url_for('static', filename='asl_chart.png') }}" alt="ASL Alphabet Chart" class="asl-guide">
+        </section>
+    </main>
+
+    <!-- Sticky webcam -->
+    <div class="sticky-webcam-container" id="sticky-webcam">
+        <div class="video-container">
+        <img src="{{ url_for('video') }}" alt="Sticky Webcam Feed" class="sticky-webcam">
+    </div></div>
+
+    <footer>
+        <p>© 2025 ASL Detection Web App. Made with ❤️ by Mithun.</p>
+    </footer>
+
+    <script>
+        const stickyWebcamContainer = document.getElementById('sticky-webcam');
+        const guideSection = document.querySelector('.guide-section');
+    
+        window.addEventListener('scroll', () => {
+            const guideSectionTop = guideSection.offsetTop;
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
+    
+            if (scrollPosition > guideSectionTop - viewportHeight * 0.8) {
+                stickyWebcamContainer.style.opacity = '1';
+                stickyWebcamContainer.style.pointerEvents = 'auto';
+                stickyWebcamContainer.style.width = '400px';
+            } else {
+                stickyWebcamContainer.style.opacity = '0';
+                stickyWebcamContainer.style.pointerEvents = 'none';
+                stickyWebcamContainer.style.width = '200px';
+            }
+        });
+    </script>
+</body>
+
+</html>

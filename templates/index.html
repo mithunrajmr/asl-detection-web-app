@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASL Detection Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Basic SEO -->
+<title>ASL Detection - Real-Time American Sign Language Recognition</title>
+<meta name="description" content="ASL Detection is a real-time web app that uses machine learning to recognize American Sign Language gestures via webcam.">
+<meta name="keywords" content="ASL, American Sign Language, hand gesture recognition, sign language, real-time detection, machine learning, Flask, webcam">
+<meta name="author" content="Mithun Raj">
+
+<!-- Open Graph (for social media sharing) -->
+<meta property="og:title" content="ASL Detection - Real-Time Sign Language Recognition">
+<meta property="og:description" content="Web app that detects ASL gestures live using webcam and ML.">
+<meta property="og:image" content="{{ url_for('static', filename='asl_chart.png', _external=True) }}">
+<meta property="og:url" content="{{ request.url }}">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon (optional) -->
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">ASL DETECTION</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/detect">Detect</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to ASL Detection</h1>
+                <p>Real-time American Sign Language recognition using your webcam.</p>
+                <a href="/detect" class="btn">Start Detection</a>
+            </div>
+        </section>
+
+        <section class="guide">
+            <h2>ASL Alphabet Chart</h2>
+            <p>Use this guide to learn hand gestures for each letter.</p>
+            <img src="{{ url_for('static', filename='asl_chart.png') }}" alt="ASL Chart">
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Real-Time Detection</h3>
+                <p>Detects your ASL gestures instantly using your webcam.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Clean UI</h3>
+                <p>A simple and responsive interface built for ease of use.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Learn ASL</h3>
+                <p>Improve your skills by practicing with live feedback.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 ASL Detection Web App. Made with ❤️ by Mithun.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Mithun Raj</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Basic SEO -->
+<title>ASL Detection - Real-Time American Sign Language Recognition</title>
+<meta name="description" content="ASL Detection is a real-time web app that uses machine learning to recognize American Sign Language gestures via webcam.">
+<meta name="keywords" content="ASL, American Sign Language, hand gesture recognition, sign language, real-time detection, machine learning, Flask, webcam">
+<meta name="author" content="Mithun Raj">
+
+<!-- Open Graph (for social media sharing) -->
+<meta property="og:title" content="ASL Detection - Real-Time Sign Language Recognition">
+<meta property="og:description" content="Web app that detects ASL gestures live using webcam and ML.">
+<meta property="og:image" content="{{ url_for('static', filename='asl_chart.png', _external=True) }}">
+<meta property="og:url" content="{{ request.url }}">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon (optional) -->
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">ASL DETECTION</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/detect">Detect</a></li>
+                <li><a href="/about" class="active">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-main">
+        <section class="about-content">
+            <h1>About Me</h1>
+            <p>Hello! I'm <strong>Mithun Raj</strong>, a passionate Software Developer based in Bengaluru. I specialize in full-stack development and machine learning, with experience building dynamic web applications using Flask, React, SQL, and Python.</p>
+            
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Software Developer Intern</strong> – AuMDS (2024–2025)</li>
+                <li><strong>ML Intern</strong> – Aqmenz Automation (2023)</li>
+                <li><strong>Full Stack Intern</strong> – Varcons Technologies (2023)</li>
+            </ul>
+
+            <h2>Projects</h2>
+            <ul>
+                <li>Flask Blog Platform with authentication & rich UI</li>
+                <li>House Rental System with PHP backend & Oracle DB</li>
+            </ul>
+
+            <h2>Certifications</h2>
+            <ul>
+                <li>NPTEL – Programming in Java, Social Networks</li>
+                <li>Udemy – 100 Days of Python</li>
+            </ul>
+
+            <h2>Contact</h2>
+            <p>
+                📧 <a href="mailto:2mrmithunraj@gmail.com">2mrmithunraj@gmail.com</a><br>
+                🌐 <a href="https://mithunrajmr.netlify.app/" target="_blank">Portfolio</a><br>
+                🔗 <a href="https://www.linkedin.com/in/mithunrajmr" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 ASL Detection Web App. Made with ❤️ by Mithun.</p>
+    </footer>
+
+</body>
+</html>
